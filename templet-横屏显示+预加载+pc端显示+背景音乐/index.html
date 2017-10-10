@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>横屏显示+预加载+pc端显示</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,shrink-to-fit=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery.qrcode.min.js"></script>
+    <!--<script type="text/javascript">
+    	监测代码
+    </script>-->
+    <script>
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            audioAutoPlay('musicStar');
+        }, false);
+    </script>
+</head>
+<body>
+
+<!--竖屏-->
+<div id="page-portrait" class="page-portrait">
+    <img src="img/phone.png" alt=""/>
+    <h3>为了更好的体验，请锁定横屏浏览</h3>
+</div>
+<!--横屏-->
+<div  id="page-landscape" class="page-landscape">
+    <!--预加载-->
+    <div class="load-page" id="loadingPage">
+        <div class="img-load-now">
+            <!--加载动画-->
+            <img class="loading-img" src="img/loading.gif"/>
+            <p id="loadTxt">0%</p>
+        </div>
+    </div>
+    <!--正文-->
+    <div class="page-box" id="pageContainer">
+        <h1>横屏全</h1>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus, aliquid assumenda commodi est, et id iste minima nemo nostrum pariatur provident quaerat quisquam repellat repudiandae tempore ut, vel? Maiores.</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus eaque eligendi ex nam non provident saepe similique vitae. Asperiores consequuntur dolor doloribus fuga laudantium nam odit, qui sunt tempora vel.</p>
+    </div>
+</div>
+<!--背景音乐-->
+<audio id="musicStar" src="source/music.mp3" preload="auto" loop="loop"></audio>
+<div class="btn-music">
+    <img src="img/music-open.png" class="open music" style="display: block;"/>
+    <img src="img/music-close.png" class="clock music" style="display: none;"/>
+</div>
+<!--pc端打开提示二维码-->
+<div class="viewPC">
+    <div class="ewmBox">
+        <div id="ewmImg"></div>
+        <p>请使用手机端打开</p>
+    </div>
+</div>
+</body>
+<script>
+    //页面提示二维码
+    if(navigator.userAgent.match(/(iPhone|iPod|Android|ios|SymbianOS)/i) == null){
+        console.log(window.innerWidth);
+        $('#ewmImg').qrcode(window.location.href);
+        $('.viewPC').show();
+    }
+</script>
+<script>
+/*背景音乐,处理微信播放问题*/
+    var musicStar = document.getElementById('musicStar');
+    function audioAutoPlay(id){
+        var audio = document.getElementById(id);
+        var play = function(){
+            audio.play();
+            audio.pause();
+//            sucMic.play();
+//            sucMic.pause();
+//            errMic.play();
+//            errMic.pause();
+//            sresultMic.play();
+//            sresultMic.pause();
+//            eresultMic.play();
+//            eresultMic.pause();
+            document.removeEventListener("touchstart",play, false);
+        };
+        audio.play();
+        audio.pause();
+//        sucMic.play();
+//        sucMic.pause();
+//        errMic.play();
+//        errMic.pause();
+//        sresultMic.play();
+//        sresultMic.pause();
+//        eresultMic.play();
+//        eresultMic.pause();
+        document.addEventListener("touchstart",play, false);
+    }
+</script>
+
+<script src="js/style.js"></script>
+<!--分享代码-->
+<script src="https://h5php.xingyuanauto.com/weixin_serve/jssdk/js/jweixin-1.0.0.js"></script>
+<script src="js/wx_share.js" type="text/javascript" charset="utf-8"></script>
+</html>
