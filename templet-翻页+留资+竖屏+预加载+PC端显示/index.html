@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,shrink-to-fit=no">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta name="msapplication-tap-highlight" content="no">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.qrcode.min.js"></script>
+	<!--<script type="text/javascript">
+        监测代码
+    </script>-->
+</head>
+<body>
+	<!--横屏-->
+	<div id="page-landscape" class="page-landscape">
+		<img src="img/phone.png" alt=""/>
+		<h3>为了更好的体验，请使用竖屏浏览</h3>
+	</div>
+	<!--竖屏-->
+	<div id="page-portrait" class="page-portrait">
+		<!--预加载-->
+		<div class="load-page" id="loadingPage">
+			<div class="img-load-now">
+				<!--加载动画-->
+				<img class="loading-img" src="img/loading.gif"/>
+				<p id="loadTxt">0%</p>
+			</div>
+		</div>
+		<div class="swiper-container page-box" id="pageContainer">
+			<div class="swiper-wrapper">
+				<!--首页-->
+				<div class="swiper-slide pageOne">
+					<h1>第一页</h1>
+					<p class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus illum impedit mollitia nostrum. Aut cupiditate facilis illum itaque laudantium libero placeat sint. Architecto debitis eos ex incidunt totam. Iure.</p>
+					<img src="img/one-font.png"   class="arrow ani" swiper-animate-effect=" up"  swiper-animate-delay="1s" alt="" />
+				</div>
+				<!--第二页-->
+				<div class="swiper-slide pageTwo">
+					<h1>第二页</h1>
+					<h4 class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus adipisci alias aliquam cumque dolor doloremque, dolorum eos, facere hic iste laudantium perferendis quidem repellendus similique. Eos molestiae numquam velit!</h4>
+					<img src="img/one-font.png" class="arrow ani" swiper-animate-effect=" up"  swiper-animate-delay="1s" alt="" />
+				</div>
+				<!--第三页面-->
+				<div class="swiper-slide pageThree" >
+					<h1>第三页</h1>
+					<h4 class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus adipisci alias aliquam cumque dolor doloremque, dolorum eos, facere hic iste laudantium perferendis quidem repellendus similique. Eos molestiae numquam velit!</h4>
+					<img src="img/one-font.png" class="arrow ani" swiper-animate-effect=" up"  swiper-animate-delay="1s"   alt="" />
+				</div>
+				<!--第四页面-->
+				<div class="swiper-slide pageFour" >
+					<!--注册页-->
+					<div class="userEnd" id="userEnd">
+						<div  class="userInfo-box" >
+							<form id="userForm" >
+								<ul class="input-form">
+									<li>
+										<span >姓名</span>
+										<input   type="text" id="username" name="username" placeholder="姓名"  maxlength=10 minlength=2 required="required" />
+									</li>
+									<li>
+										<span id="people">性别</span>
+										<select id="sex" name="sex" class="sex">
+											<option value="-1">性别</option>
+											<option value="男">男</option>
+											<option value="女">女</option>
+										</select>
+										<em class="select-icon"></em>
+									</li>
+									<li>
+										<span >手机</span>
+										<input type="tel" id="phone" name="phone" placeholder="手机" maxlength=11  required="required" />
+									</li>
+									<li>
+										<span class="longspan">计划购车时间</span>
+										<select class="longselect" name="cartime" id="cartime">
+											<option value="-1">选择时间</option>
+											<option value="0-3个月">0-3个月</option>
+											<option value="4-6个月">4-6个月</option>
+											<option value="7-12个月">7-12个月</option>
+											<option value="1-2年">1-2年</option>
+										</select>
+										<em class="select-icon"></em>
+									</li>
+									<li>
+										<span class="longspan">感兴趣车型</span>
+										<select class="longselect" name="cartype" id="cartype">
+											<option value="-1"  >选择车型</option>
+											<option value="E 200 L运动轿车">E 200 L运动轿车</option>
+											<option value="E 200 L 4MATIC运动轿车">E 200 L 4MATIC运动轿车</option>
+											<option value="E 300 L 时尚型运动轿车">E 300 L 时尚型运动轿车</option>
+											<option value="E 300 L 豪华型运动轿车">E 300 L 豪华型运动轿车</option>
+											<option value="E 320 L 4MATIC 运动轿车">E 320 L 4MATIC 运动轿车</option>
+											<option value="E 200 L轿车">E 200 L轿车</option>
+											<option value="E 200 L 4MATIC轿车">E 200 L 4MATIC轿车</option>
+											<option value="E 300 L 时尚型轿车">E 300 L 时尚型轿车</option>
+											<option value="E 300 L 豪华型轿车">E 300 L 豪华型轿车</option>
+											<option value="E 320 L 4MATIC 轿车">E 320 L 4MATIC 轿车</option>
+											<option value="E 200运动版">E 200运动版</option>
+											<option value="E 200 4MATIC运动版">E 200 4MATIC运动版</option>
+											<option value="E 300运动版">E 300运动版</option>
+										</select>
+										<em class="select-icon"></em>
+									</li>
+									<li class="province-city">
+										<select id="ddlProvince" name="ddlProvince" class="ddlProvince" title="省/00" >
+											<option value="-1">选择省份</option>
+										</select>
+										<em class="select-icon select-province"></em>
+										<select id="ddlCity" name="ddlCity" class="ddlCity">
+											<option value="-1">选择城市</option>
+										</select>
+										<em class="select-icon"></em>
+									</li>
+									<li>
+										<span>经销商</span>
+										<select id="agency" name="agency" >
+											<option value="-1">选择经销商</option>
+										</select>
+										<em class="select-icon"></em>
+									</li>
+								</ul>
+							</form>
+							<div id="btn-userInfo"  class="btn-userInfo btn-move">确认提交</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!--弹框-->
+	<div class="error alertBox ">
+		<img src="img/error.png" class="alert"/>
+	</div>
+	<div class="success alertBox ">
+		<img src="img/success.png" class="alert"/>
+	</div>
+	<div class="repace alertBox">
+		<img src="img/repace.png" class="alert" alt=""/>
+	</div>
+	<div class="repaceagain alertBox">
+		<img src="img/plase.png" class="alert" alt=""/>
+	</div>
+	<!--pc端打开提示二维码-->
+	<div class="viewPC">
+		<div class="ewmBox">
+			<div id="ewmImg"></div>
+			<p>请使用手机端打开</p>
+		</div>
+	</div>
+</body>
+
+<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/swiper.animate1.0.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/Benc_dealer.js"></script>
+<script src="js/province.js"></script>
+<script src="js/style.js" type="text/javascript" charset="utf-8"></script>
+<!--分享代码-->
+<script src="https://h5php.xingyuanauto.com/weixin_serve/jssdk/js/jweixin-1.0.0.js"></script>
+<script src="js/wx_share.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	//页面提示二维码
+	if(navigator.userAgent.match(/(iPhone|iPod|Android|ios|SymbianOS)/i) == null){
+		console.log(window.innerWidth);
+		$('#ewmImg').qrcode(window.location.href);
+		$('.viewPC').show();
+	}
+	/**滑块**/
+	var swiper;
+
+
+</script>
+
+</html>
