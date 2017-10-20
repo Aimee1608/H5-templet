@@ -139,17 +139,7 @@ var SaveInfo = {
             }
 
         });
-        $('input[type=checkbox]').change(function(){
-            var check = $(this).attr('checked');
-            console.log(check);
-            if(check=='checked'){
-                $('#submit').removeClass('nosubmit');
-                SaveInfo.checked=true;
-            }else{
-                $('#submit').addClass('nosubmit');
-                SaveInfo.checked=false;
-            }
-        })
+        
     },
     clickReg:function(){
         var usernameReg = false,phoneReg = false,provinceReg = false,cityReg = false,cartypeReg = false,cartimeReg = false,sexReg = false;
@@ -263,23 +253,5 @@ $(function(){
 
 });
 
-
-
-
-
-//function fun(id01,id02){
-//    if ($("iframe.sphinxPage").contents().find(id01).length &gt; 0){
-//        var stringTest = $("iframe.sphinxPage").contents().find(id01).next().text(); //喷漆工时费率 For BMW
-//        //var stringTest = $("iframe.sphinxPage").contents().find("#ManufacturerLacquerFactor_wage").val(); //喷漆工时费率 For BENZ
-//        $(id02).val(stringTest.substring(0, stringTest.indexOf("\(")));
-//        if (stringTest.indexOf("\(") &gt;= 0) {
-//            $(id02).val(stringTest.substring(0, stringTest.indexOf("\(")));
-//        }else{
-//            $(id02).val(stringTest);
-//        }
-//    }
-//}
-//fun('#LabourCostFactor_mechanicWage1','#customField-input-laborRateDisplay');
-//fun('#ManufacturerLacquerFactor_wage','#customField-input-FTPaintLaborCostRate');
 
 
