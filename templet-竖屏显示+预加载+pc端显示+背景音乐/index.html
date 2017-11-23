@@ -14,6 +14,13 @@
     <script src="js/jquery.qrcode.min.js"></script>
     <!--<script type="text/javascript">
     	监测代码
+		 var _hmt = _hmt || [];
+			(function() {
+				var hm = document.createElement("script");
+				hm.src = "https://hm.baidu.com/hm.js?fdf0d2736b81bcae38aee0a100352a30";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
     </script>-->
     <script>
         document.addEventListener("WeixinJSBridgeReady", function () {
@@ -101,6 +108,17 @@
 
 <script src="js/style.js"></script>
 <!--分享代码-->
-<script src="https://h5php.xingyuanauto.com/weixin_serve/jssdk/js/jweixin-1.0.0.js"></script>
-<script src="js/wx_share.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="https://h5php.xingyuanauto.com/weixin_serve/jssdk/js/wx_share.js"></script>
+<script>
+    $(function(){
+        //微信分享调用
+        var wxShare = new WxShare({ //微信自定义分享功能
+            title:'下班了 快闪人', //分享标题
+            desc:'下班不快点走准没好事',//分享描述
+            img:'img/share.jpg'//分享图片
+        });
+
+    })
+
+</script>
 </html>

@@ -60,25 +60,6 @@ function ImgLoadingByFile(imgArray,loadPageID,loadTxtID,showpageID){
         var timer = setTimeout(function(){
             $('#'+loadPageID).hide();
             $('#'+showpageID).show();
-            swiper = new Swiper('.swiper-container', {
-                pagination: '.swiper-pagination',
-                paginationClickable: true,
-                direction: 'vertical',
-                onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
-                    swiperAnimateCache(swiper); //隐藏动画元素
-                    swiperAnimate(swiper); //初始化完成开始动画
-                },
-                onSlideChangeEnd: function(swiper){
-                    //console.log(333);
-                    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-
-
-                }
-            });
-            $('.arrow').click(function(){
-
-                swiper.slideNext();
-            });
             clearTimeout(timer);
         },long);
     }
@@ -99,7 +80,7 @@ function ImgLoadingByFile(imgArray,loadPageID,loadTxtID,showpageID){
                     imgLoad++;
                     percent = parseInt(imgLoad/imgTotal*100);
                     $('#'+loadTxtID).html(percent+'%');
-                    console.log(percent);
+                    //console.log(percent);
 
                     if(percent>=100){
                         var etime = new Date();
@@ -122,17 +103,13 @@ function ImgLoadingByFile(imgArray,loadPageID,loadTxtID,showpageID){
 
 //横屏
 function landscape(){
-    //var w = window.innerWidth;
-    //var h = window.innerHeight;
     var w = window.Utils.windowW();
     var h = window.Utils.windowH();
     $("body").css({"width":w,"height":h});
     $('#page-landscape').css({"width":w,"height":h}).show();
     $('#page-portrait').css({"width":w,"height":h});
-    //$('#page-landscape').show();
-
 }
-var firstInit = true;
+var firstInit = true,wrem = 0;
 //竖屏
 function portrait(){
 
@@ -140,28 +117,23 @@ function portrait(){
     var h = window.Utils.windowH();
     //初始化加载
     if(firstInit){
-        $("body").css({"width":w,"height":h});
-        $('#page-portrait').css({"width":w,'height':h}).show();
-        $('#page-portrait').show();
-        $('#page-landscape').hide();
-
+        wrem = window.remCalc.rem;
+        //$("body").css({"width":w,"height":3401/75*wrem});
+        //$('#page-portrait').css({"width":w,'height':3401/75*wrem}).show();
+        //$('#page-landscape').hide();
         var imgFile = [
             "img/bg.png",
             "img/share.jpg",
-            "img/music-close.png",
-            "img/music-open.png",
             "img/phone.png"
         ];
         ImgLoadingByFile(imgFile,'loadingPage','loadTxt','pageContainer');
+
         firstInit = false;
     }else {
-        //$('#page-portrait').show();
-        //$('#page-landscape').hide();
-        $("body").css({"width":w,"height":h});
-        $('#page-portrait').css({"width":w,'height':h}).show();
+        $("body").css({"width":w,"height":3401/75*wrem});
+        $('#page-portrait').css({"width":w,'height':3401/75*wrem}).show();
         $('#page-landscape').hide();
     }
-
 }
 
 (function() {
