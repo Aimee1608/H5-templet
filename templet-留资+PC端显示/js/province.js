@@ -36,7 +36,7 @@ var ProvinceData = {
             var masterObj = document.getElementById(provinceSelectID);
             if (masterObj && masterObj.options) {
                 masterObj.options.length = 0;
-                masterObj.options[0] = new Option("选择省份", -1);
+                masterObj.options[0] = new Option("选择省份", 0);
                 for (var i = 0; i < ProvinceData.JSonData.length; i++) {
                     masterObj.options[masterObj.options.length] = new Option(ProvinceData.JSonData[i].dealer_name, ProvinceData.JSonData[i].dealer_id);
                 }
@@ -52,7 +52,7 @@ var ProvinceData = {
             var subAreaObj = document.getElementById(citySelectID);
             //console.log(subAreaObj);
             subAreaObj.options.length = 0;
-            subAreaObj.options[subAreaObj.options.length] = new Option("选择城市", -1);
+            subAreaObj.options[subAreaObj.options.length] = new Option("选择城市", 0);
             for (var i = 0; i < ProvinceData.JSonData.length; i++) {
                 if (ProvinceData.JSonData[i].dealer_id == masterObjid) {
                     for (var j = 0; j < ProvinceData.JSonData[i].city.length; j++) {
@@ -64,7 +64,7 @@ var ProvinceData = {
         else if (masterObjid && masterObjid == -1) {
             var subAreaObj = document.getElementById(citySelectID);
             subAreaObj.options.length = 0;
-            subAreaObj.options[subAreaObj.options.length] = new Option("选择城市", -1);
+            subAreaObj.options[subAreaObj.options.length] = new Option("选择城市", 0);
         }
     },
     BindAgency:function(provinceSelectID, citySelectID, agencyID){
@@ -78,7 +78,7 @@ var ProvinceData = {
         if (provinceId && provinceId > 0 && cityId && cityId > 0) {
             var subAreaObj = document.getElementById(agencyID);
             subAreaObj.options.length = 0;
-            subAreaObj.options[subAreaObj.options.length] = new Option("选择经销商", -1);
+            subAreaObj.options[subAreaObj.options.length] = new Option("选择经销商", 0);
             for (var i = 0; i < ProvinceData.JSonData.length; i++) {
                 if (ProvinceData.JSonData[i].dealer_id == provinceId) {
                     var t1 = ProvinceData.JSonData[i];
@@ -99,7 +99,7 @@ var ProvinceData = {
             var subAreaObj = document.getElementById(agencyID);
             if (subAreaObj != null) {
                 subAreaObj.options.length = 0;
-                subAreaObj.options[subAreaObj.options.length] = new Option("选择经销商", -1);
+                subAreaObj.options[subAreaObj.options.length] = new Option("选择经销商", 0);
             }
         }
     }

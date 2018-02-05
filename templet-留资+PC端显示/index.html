@@ -8,19 +8,28 @@
 	    <meta content="black" name="apple-mobile-web-app-status-bar-style">
 	    <meta content="telephone=no" name="format-detection">
 	    <meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" href="bomebox/css/global.css"/>
 	    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery.qrcode.min.js"></script>
-		<!--<script>
-			检测代码
-			 var _hmt = _hmt || [];
+		<script src="bomebox/js/windowOpen.js"></script>
+		<script src="https://h5api.xingyuanauto.com/StatisticsData"></script>
+		<script>
+			//检测代码
+			var _hmt = _hmt || [];
 			(function() {
 				var hm = document.createElement("script");
 				hm.src = "https://hm.baidu.com/hm.js?fdf0d2736b81bcae38aee0a100352a30";
 				var s = document.getElementsByTagName("script")[0];
 				s.parentNode.insertBefore(hm, s);
 			})();
-		</script>-->
+		</script>
+		<script>
+			//页面提示二维码
+			if(navigator.userAgent.match(/(iPhone|iPod|Android|ios|SymbianOS)/i) == null){
+				// console.log(window.innerWidth);
+				window.location.href = "https://h5.xingyuanauto.com/201711-New/viewpc/?link="+window.location.href;
+			}
+		</script>
 	</head>
 	<body>
 		<div class="box">
@@ -37,7 +46,7 @@
 			            <li>
 			            	<span id="people">性别</span>
 			            	<select id="sex" name="sex" class="sex">
-								<option value="-1">性别</option>
+								<option value="0">性别</option>
 			            		<option value="男">男</option>
 			            		<option value="女">女</option>
 			            	</select>
@@ -50,7 +59,7 @@
 						<li>
 							<span class="longspan">计划购车时间</span>
 							<select class="longselect" name="cartime" id="cartime">
-								<option value="-1">选择时间</option>
+								<option value="0">选择时间</option>
 								<option value="0-3个月">0-3个月</option>
 								<option value="4-6个月">4-6个月</option>
 								<option value="7-12个月">7-12个月</option>
@@ -61,7 +70,7 @@
 						<li>
 							<span class="longspan">感兴趣车型</span>
 							<select class="longselect" name="cartype" id="cartype">
-								<option value="-1"  >选择车型</option>
+								<option value="0"  >选择车型</option>
 								<option value="E 200 L运动轿车">E 200 L运动轿车</option>
 								<option value="E 200 L 4MATIC运动轿车">E 200 L 4MATIC运动轿车</option>
 								<option value="E 300 L 时尚型运动轿车">E 300 L 时尚型运动轿车</option>
@@ -80,18 +89,18 @@
 						</li>
 			            <li class="province-city">
 			                <select id="ddlProvince" name="ddlProvince" class="ddlProvince" title="省/00" >
-			                    <option value="-1">选择省份</option>
+			                    <option value="0">选择省份</option>
 			                </select>
 			                <em class="select-icon select-province"></em>
 			                <select id="ddlCity" name="ddlCity" class="ddlCity">
-			                    <option value="-1">选择城市</option>
+			                    <option value="0">选择城市</option>
 			                </select>
 			                <em class="select-icon"></em>
 			            </li>
 			            <li>
 			                <span>经销商</span>
 							<select id="agency" name="agency" >
-								<option value="-1">选择经销商</option>
+								<option value="0">选择经销商</option>
 							</select>
 			                <em class="select-icon"></em>
 			            </li>
@@ -102,36 +111,7 @@
 			</div>
 
 	</div>
-		<!--弹框-->
-		<div class="error alertBox ">
-			<img src="img/error.png" class="alert"/>
-		</div>
-		<div class="success alertBox ">
-			<img src="img/success.png" class="alert"/>
-		</div>
-		<div class="repace alertBox">
-			<img src="img/repace.png" class="alert" alt=""/>
-		</div>
-		<div class="repaceagain alertBox">
-			<img src="img/plase.png" class="alert" alt=""/>
-		</div>
-		<!--pc端打开提示二维码-->
-		<div class="viewPC">
-			<div class="ewmBox">
-				<div id="ewmImg"></div>
-				<p>请使用手机端打开</p>
-			</div>
-		</div>
 	</body>
-	<script>
-		//页面提示二维码
-		if(navigator.userAgent.match(/(iPhone|iPod|Android|ios|SymbianOS)/i) == null){
-			console.log(window.innerWidth);
-			$('#ewmImg').qrcode(window.location.href);
-			$('.viewPC').show();
-		}
-	</script>
-
 	<script src="js/Benc_dealer.js"></script>
 	<script src="js/province.js"></script>
     <script src="js/style.js" type="text/javascript" charset="utf-8"></script>

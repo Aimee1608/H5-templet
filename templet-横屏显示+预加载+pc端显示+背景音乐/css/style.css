@@ -177,6 +177,7 @@ body {
   height: 100%;
 }
 /*************************������************************/
+/******************************����*****************/
 .page-portrait {
   width: 100vw;
   height: 100vh;
@@ -218,6 +219,7 @@ body {
     transform: rotate(90deg);
   }
 }
+/******************************����*****************/
 .page-landscape {
   width: 100vw;
   height: 100vh;
@@ -252,34 +254,6 @@ body {
 .load-page .img-load-now p {
   width: 100%;
   text-align: center;
-}
-.viewPC {
-  background: #333;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  display: none;
-  z-index: 1000;
-}
-.viewPC .ewmBox {
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translate(0, -50%);
-  text-align: center;
-}
-.viewPC .ewmBox div canvas {
-  width: 200px;
-  height: 200px;
-  padding: 10px;
-  background: #fff;
-}
-.viewPC .ewmBox p {
-  margin-top: 30px;
-  color: #fff;
 }
 /*************************����************************/
 .page-box {

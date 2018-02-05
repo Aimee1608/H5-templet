@@ -11,17 +11,24 @@
     <meta name="msapplication-tap-highlight" content="no">
     <link rel="stylesheet" href="css/style.css"/>
     <script src="js/jquery-1.8.3.min.js"></script>
-    <script src="js/jquery.qrcode.min.js"></script>
-    <!--<script type="text/javascript">
-    	监测代码
-		 var _hmt = _hmt || [];
-			(function() {
-				var hm = document.createElement("script");
-				hm.src = "https://hm.baidu.com/hm.js?fdf0d2736b81bcae38aee0a100352a30";
-				var s = document.getElementsByTagName("script")[0];
-				s.parentNode.insertBefore(hm, s);
-			})();
-    </script>-->
+    <script src="https://h5api.xingyuanauto.com/StatisticsData"></script>
+    <script>
+        //检测代码
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?fdf0d2736b81bcae38aee0a100352a30";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script>
+        //页面提示二维码
+        if(navigator.userAgent.match(/(iPhone|iPod|Android|ios|SymbianOS)/i) == null){
+            // console.log(window.innerWidth);
+            window.location.href = "https://h5.xingyuanauto.com/201711-New/viewpc/?link="+window.location.href;
+        }
+    </script>
 </head>
 <body>
 <!--横屏-->
@@ -48,25 +55,7 @@
 
     </div>
 </div>
-
-<!--pc端打开提示二维码-->
-<div class="viewPC">
-    <div class="ewmBox">
-        <div id="ewmImg"></div>
-        <p>请使用手机端打开</p>
-    </div>
-</div>
 </body>
-<script>
-    //页面提示二维码
-    if(navigator.userAgent.match(/(iPhone|iPod|Android|ios|SymbianOS)/i) == null){
-        console.log(window.innerWidth);
-        $('#ewmImg').qrcode(window.location.href);
-        $('.viewPC').show();
-    }
-</script>
-
-
 <script src="js/style.js"></script>
 <!--分享代码-->
 <script type="text/javascript" src="https://h5php.xingyuanauto.com/weixin_serve/jssdk/js/wx_share.js"></script>

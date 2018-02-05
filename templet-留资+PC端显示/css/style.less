@@ -1,85 +1,17 @@
 /*reset*/
-/*reset*/
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -165,38 +97,6 @@ table {
 }
 .background{width:100%; height: auto;margin:0;padding: 0;position: absolute;left:0;top:0}
 
-//PC提示
-.viewPC {
-  background: #333;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  display: none;
-  z-index: 1000;
-  .ewmBox {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translate(0, -50%);
-    text-align: center;
-    div {
-      canvas {
-        width: 200px;
-        height: 200px;
-        //margin-bottom: 40px;
-        padding: 10px;
-        background: #fff;
-      }
-    }
-    p {
-      margin-top: 30px;
-      color: #fff;
-    }
-  }
-}
 /***********************表单**********************/
   ul{
     list-style: none;
@@ -225,12 +125,8 @@ table {
     .input-form {
       box-sizing: border-box;
       width: 100%;
-      li.red {
-//      border: 1px solid #c01c1c;
-      }
       li {
         box-sizing: border-box;
-//      border: 1px solid #A0A0A0;
         width: 100%;
         height: 52/75rem;
         margin-bottom: 18/75rem;
@@ -253,7 +149,6 @@ table {
           position: absolute;
           left: -1px;
           font-size: 24/75rem;
-//        top: -1px;
           width: 125/75rem;
           height: 52/75rem;
           line-height: 52/75rem;
@@ -272,9 +167,6 @@ table {
           height: 100%;
           font-size: 24/75rem;
           border-radius: 0;
-        }
-        input.inputerror{
-          background:rgba(255,231,147,0.8);
         }
         select {
           float: right;
@@ -317,7 +209,6 @@ table {
           box-sizing: border-box;
           width: 260/75rem;
           height: 52/75rem;
-//        border: 1px solid #A0A0A0;
           background: #fff;
         }
         em.select-province{
@@ -330,35 +221,28 @@ table {
         clear: both;
       }
     }
-    .btn-userInfo{
-      box-sizing:border-box;
-      width:283/75rem;
 
-      height:50/75rem;
-      line-height: 50/75rem;
-      top:500/75rem;
-      left:130.5/75rem ;
-      position:absolute;
-      background:#50abe9;
-      animation: joinClick 4s ease infinite ;
-      -webkit-animation: joinClick 4s ease infinite ;
-      letter-spacing: 3px;
-      text-align: center;
-      color:#fff;
-      font-size:26/75rem;
-    }
   }
-  .userInfo{
-    text-align: left;
-    display:none;
-    background:rgba(0,0,0,0.6);
-    width:100%;
-    height:100%;
-    box-sizing:border-box;
-    position: absolute;
-    left:0;
-    bottom:0;
-  }
+.btn-userInfo{
+  box-sizing:border-box;
+  width:283/75rem;
+  height:50/75rem;
+  line-height: 50/75rem;
+  top:500/75rem;
+  left:130.5/75rem ;
+  position:absolute;
+  background:#50abe9;
+  animation: joinClick 4s ease infinite ;
+  -webkit-animation: joinClick 4s ease infinite ;
+  letter-spacing: 3px;
+  text-align: center;
+  color:#fff;
+  font-size:26/75rem;
+}
+.btn-move{
+  -webkit-animation:buttonTada 4s ease infinite ;
+  animation:buttonTada 4s ease infinite ;
+}
 
 @keyframes joinClick {
   0% {
@@ -419,44 +303,6 @@ table {
   }
 }
 
-.alertBox{
-  display: none;
-  width: 100vw;
-  height: 100vh;
-  background-color:rgba(76,76,76,0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-.error{
-  z-index: 100;
-}
-.success{
-  background-color:transparent;
-  z-index: 101;
-}
-.repace{
-  z-index: 102;
-}
-.repaceagain{
-  z-index: 103;
-}
-
-.alert{
-  width: 400/60rem;
-  height: 205/60rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-.btn-userInfo{
-  opacity: 1;
-}
-.btn-move{
-  -webkit-animation:buttonTada 4s ease infinite ;
-  animation:buttonTada 4s ease infinite ;
-}
 @keyframes buttonTada {//loading开始小图标
   0% {
     -webkit-transform: scale(1);

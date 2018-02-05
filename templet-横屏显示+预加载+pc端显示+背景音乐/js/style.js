@@ -61,6 +61,8 @@ function ImgLoadingByFile(imgArray,loadPageID,loadTxtID,showpageID){
             $('#'+loadPageID).hide();
             $('#'+showpageID).show();
             $('.btn-music').show();
+            //先暂停后播放
+            musicStar.pause();
             musicStar.play();
             //音乐
             clearTimeout(timer);
@@ -107,8 +109,6 @@ function ImgLoadingByFile(imgArray,loadPageID,loadTxtID,showpageID){
 function landscape(){
     //var w = window.innerWidth;
     //var h = window.innerHeight;
-
-
     var w = window.Utils.windowW();
     var h = window.Utils.windowH();
     //初始化加载

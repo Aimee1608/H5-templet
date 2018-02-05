@@ -60,10 +60,12 @@ var SaveInfo = {
     phone:null,//mobile,mobile
     cartype:null,//interested,car_type
     province:null,//province,dealer_name省份，城市，经销商（1,2,3）
+    dealerName:null,
     city:null,//city,无
     source:null,//source,source,123
     cartime:null,
-    checked:false,
+    source_end:2,//来源端设备 1：PC 2：移动端
+    chart:'user_buick201802',
     init:function(){
         function GetQueryString(name){
             var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
@@ -165,10 +167,6 @@ var SaveInfo = {
     submit:function(){
         $('#btn-userInfo').on('click',function(e){
             e.preventDefault();
-            $(".alert").click(function(){
-                $(".alertBox").fadeOut(300);
-                $('.btn-userInfo').addClass('btn-move');
-            });
             if(SaveInfo.clickReg()){
 
                 SaveInfo.username = $('input[name="username"]').val();
@@ -193,7 +191,8 @@ var SaveInfo = {
                     dealer_name:SaveInfo.province+','+SaveInfo.city+','+SaveInfo.dealerName,
                     source:SaveInfo.source,
                     buy_time:SaveInfo.cartime,
-                    chart:'user_benc'
+                    chart:SaveInfo.chart,
+                    source_end:SaveInfo.source_end
                 };
                 console.log(xyData);
                 $.ajax({
@@ -202,28 +201,29 @@ var SaveInfo = {
                     data:xyData,
                     dataType:'json',
                     success:function(msg){
-                        console.log(msg);
+                        console.log('留资',msg);
                         if(msg.code==1001){
-                            $(".success").show();
-                            $('.btn-userInfo').removeClass('btn-move');
-                            $('select option[value="-1"]').attr('disabled',false);
+                            $(this).openWindow("提示","提交成功",['确定']);
+                            $('select option[value="0"]').attr('disabled',false);
                             $('#userForm')[0].reset();
-                            $('select').removeClass('changed');
                         }else if(msg.code==1003){//已注册
-                            $(".repace").show();
-                            $('.btn-userInfo').removeClass('btn-move');
+                            $(this).openWindow("提示","该手机号已报名，请勿重复提交",['确定']);
                         }else if(msg.code==1005){//重复提交
-                            $(".repaceagain").show();
-                            $('select option[value="-1"]').attr('disabled',false);
-                            $('.btn-userInfo').removeClass('btn-move');
+                            $(this).openWindow("提示","请勿重复提交",['确定']);
+                            $('select option[value="0"]').attr('disabled',false);
                             $('#userForm')[0].reset();
                         }else{
-                            $(".error").show();
+                            $(this).openWindow("提示","报名失败",['确定']);
                         }
+                    },
+                    error: function(msg){
+                        $(this).openWindow("提示","网络异常",['确定']);
+                        $('select option[value="0"]').attr('disabled',false);
+                        $('#userForm')[0].reset();
                     }
                 });
             }else{
-                $(".error").show();
+                $(this).openWindow("提示","请完善信息",['确定']);
                 //alert('请完善信息');
             }
 
