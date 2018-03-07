@@ -4,33 +4,26 @@
 var ProvinceData = {
     JSonData:'',
     init:function(provinceSelectID, citySelectID, agencyID){
-        //$.ajax({
-        //    type:'get',
-        //    url:'http://fld.xingyuanauto.com/public/index.php/port/city/Dealer',
-        //    success:function(msg){
-        //        //console.log(msg);
-        //        JSonData = JSON.parse(msg);
-                //console.log(JSonData);
-               ProvinceData.JSonData = Dealer;
-               
-                if(provinceSelectID){
-                    ProvinceData.BindProvince(provinceSelectID);
-                }
-                if(provinceSelectID&&citySelectID){
-                    $('#'+provinceSelectID).change(function(){
-                        ProvinceData.BindCity(provinceSelectID, citySelectID);
-						ProvinceData.BindAgency(provinceSelectID, citySelectID, agencyID);
-                        $(this).addClass('changed');
-                    });
-                }
-                if(provinceSelectID&&citySelectID&&agencyID){
-                    $('#'+citySelectID).change(function(){
-                        $(this).addClass('changed');
-                        ProvinceData.BindAgency(provinceSelectID, citySelectID, agencyID);
-                    })
-                }
-        //    }
-        //});
+
+       ProvinceData.JSonData = Dealer;
+
+        if(provinceSelectID){
+            ProvinceData.BindProvince(provinceSelectID);
+        }
+        if(provinceSelectID&&citySelectID){
+            $('#'+provinceSelectID).change(function(){
+                ProvinceData.BindCity(provinceSelectID, citySelectID);
+                ProvinceData.BindAgency(provinceSelectID, citySelectID, agencyID);
+                $(this).addClass('changed');
+            });
+        }
+        if(provinceSelectID&&citySelectID&&agencyID){
+            $('#'+citySelectID).change(function(){
+                $(this).addClass('changed');
+                ProvinceData.BindAgency(provinceSelectID, citySelectID, agencyID);
+            })
+        }
+
     },
     BindProvince:function(provinceSelectID){
         if (ProvinceData.JSonData && ProvinceData.JSonData.length > 0) {
@@ -62,7 +55,7 @@ var ProvinceData = {
                 }
             }
         }
-        else if (masterObjid && masterObjid == -1) {
+        else if (masterObjid && masterObjid == 0) {
             var subAreaObj = document.getElementById(citySelectID);
             subAreaObj.options.length = 0;
             subAreaObj.options[subAreaObj.options.length] = new Option("选择城市", 0);
@@ -96,7 +89,7 @@ var ProvinceData = {
                 }
             }
         }
-        else if ((provinceId && provinceId == -1) || (cityId && cityId == -1)) {
+        else if ((provinceId && provinceId == 0) || (cityId && cityId == 0)) {
             var subAreaObj = document.getElementById(agencyID);
             if (subAreaObj != null) {
                 subAreaObj.options.length = 0;

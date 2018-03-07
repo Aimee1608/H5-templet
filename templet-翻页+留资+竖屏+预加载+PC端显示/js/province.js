@@ -19,6 +19,7 @@ var ProvinceData = {
                 if(provinceSelectID&&citySelectID){
                     $('#'+provinceSelectID).change(function(){
                         ProvinceData.BindCity(provinceSelectID, citySelectID);
+						 ProvinceData.BindAgency(provinceSelectID, citySelectID, agencyID);
                         $(this).addClass('changed');
                     });
                 }
